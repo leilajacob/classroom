@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<h1> Pets</h1>
+
+  <div class="row">
+    <% @pets.each do |pet| %>
+      <div class="col-md-4">
+        <div id="center-it" class="panel panel-success">
+          <div class="panel-heading"><%= "#{pet.name} is a #{pet.age} year-old #{pet.breed}."%></div>
+          <div class="panel-body"></div>
+          <div class="panel-footer">
+            <ul>
+        <li><%= link_to 'Show', pet %></li>
+        <li><%= link_to 'Edit', edit_pet_path(pet) %></li>
+        <li><%= link_to 'Destroy', pet, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+           </ul>
+         </div> 
+       </div>
+    <% end %>
+    <%= link_to 'New Pet', new_pet_path, class: "btn btn-success" %>
+  </div>
+</div>
+

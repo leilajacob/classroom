@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<%= link_to 'New Teacher', new_teacher_path, class: "btn btn-success" %>
+
+<h1>Teachers</h1>
+
+  <div class="row">
+    <% @teachers.each do |teacher| %>
+      <div class="col-md-4">
+        <div id="center-it" class="panel panel-success">
+        <div class="panel-heading"><%= "#{teacher.name}, #{teacher.subject} teacher." %></div>
+        <div class="panel-body"></div>
+        <div class="panel-footer">
+          <ul>
+        <li><%= link_to 'Show', teacher %></li>
+        <li><%= link_to 'Edit', edit_teacher_path(teacher) %></li>
+        <li><%= link_to 'Destroy', teacher, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+          </ul>
+        </div>
+      </div>
+    <% end %>
+    <%= link_to 'New Teacher', new_teacher_path, class: "btn btn-success" %>
+  </div>
+</div>
+
+
